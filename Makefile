@@ -42,3 +42,9 @@ cloudbuild-setup:
 .PHONY: cloudbuild
 cloudbuild:
 	gcloud beta builds submit --substitutions=_COLLECTOR_REPO=${CONTAINER_REGISTRY},_COLLECTOR_IMAGE=${IMAGE_NAME}:${IMAGE_VERSION}
+
+.PHONY: generate-toc
+generate-toc:
+	python3 -m pip install markdown-toc
+	find . -name 'README.md' -exec markdown-toc -t github {} \;
+

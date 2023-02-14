@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check table of contents
         run: |
-          python3 -m pip install toc-generator
+          python3 -m pip install -r toc-generator
           toc-generator README.md
       - name: Check for diff in table of contents
         run: |
